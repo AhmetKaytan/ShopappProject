@@ -1,24 +1,30 @@
 @model Product
 
 <form method="POST">
+    <div asp-validation-summary="All" class="text-danger"></div>
     <div class="form-group">
         <label for="Name">Name</label>
-        <input asp-for="Name" class="form-control" placeholder="Product Name">
+        <input asp-for="Name" class="form-control" value="@Model.Name">
+        <span asp-validation-for="Name" class="text-danger"></span>
     </div>
     
     <div class="form-group">
         <label for="Price">Price</label>
-        <input asp-for="Price" class="form-control">
+        <input asp-for="Price" class="form-control" value="@Model.Price">
+        <span asp-validation-for="Price" class="text-danger"></span>
+
     </div>
 
     <div class="form-group">
         <label for="Description">Description</label>
-        <textarea asp-for="Description" class="form-control"></textarea>
+        <textarea asp-for="Description" class="form-control" value="@Model.Description"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
     </div>
 
     <div class="form-group">
         <label for="ImageUrl">ImageUrl</label>
-        <input asp-for="ImageUrl" class="form-control">
+        <input asp-for="ImageUrl" class="form-control" value="@Model.ImageUrl">
+        <span asp-validation-for="ImageUrl" class="text-danger"></span>
     </div>
 
     <div class="form-group">
@@ -26,6 +32,7 @@
         <select asp-for="CategoryId" asp-items="@ViewBag.Categories" class="form-control">
             <option selected disabled>Seçiniz...</option>
         </select>
+        <span asp-validation-for="CategoryId" class="text-danger"></span>
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
