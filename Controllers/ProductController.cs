@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using shopapp.webui.Data;
 using shopapp.webui.Models;
 
@@ -60,9 +61,10 @@ namespace shopapp.webui.Controllers
         }
 
 
+        //httpget
         public IActionResult Create()
         {
-
+            ViewBag.Categories = new SelectList(CategoryRepository.Categories, "CategoryId", "Name");
             return View();
         }
 
