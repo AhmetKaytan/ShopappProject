@@ -1,0 +1,21 @@
+bin/
+obj/
+
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+
+#node_modules
+node_modules/
+
+# img
+*.img
+*.png
+img/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
